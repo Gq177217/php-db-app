@@ -21,7 +21,7 @@
      </header>
      <main>
          <article class="home">
-             <h1>INVENTORY</h1>
+             <h1>INVENTORY home</h1>
              <p>PHP+DB lesson output</p>
              <a href="read.php" class="btn">Prodouct List</a>
          </article>
