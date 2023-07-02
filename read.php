@@ -76,6 +76,9 @@
                      <a href="read.php?order=asc">
                          <img src="images/asc.png" alt="Sort by ascending order" class="sort-img">
                      </a>
+                     <form action="read.php" method="get" class="search-form">
+                        <input type="text" class="search-box" placeholder="search by product name" name="keyword" value="<?=$keyword ?>">
+                     </form>
 
                  </div>
                  <a href="#" class="btn">Registration</a>

@@ -123,6 +123,15 @@
     vertical-align: top;
   }
 
+  .search-box {
+    box-sizing: border-box;
+    max-width: 300px;
+    height: 1.75rem;
+    padding: 0.25rem 0.5rem;
+    background: #e8f8fa;
+    border: none;
+    outline: 0;
+  }
   .products-table {
     width: 100%;
     margin: 0 auto;
