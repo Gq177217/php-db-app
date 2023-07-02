@@ -123,6 +123,10 @@
     vertical-align: top;
   }
 
+  .search-form{
+    margin-left: 0.75em; 
+  }
+
   .search-box {
     box-sizing: border-box;
     max-width: 300px;
