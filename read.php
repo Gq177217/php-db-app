@@ -64,6 +64,11 @@
      <main>
          <article class="products">
              <h1>Product List</h1>
+             <?php 
+             if(isset($_GET['message'])) {
+                echo "<p class='success'>{$_GET['message']}</p>";
+             }
+             ?>
              <div class="products-ui">
                  <div>
                      <!-- ここに並び替えボタンと検索ボックスを作成する -->
@@ -88,6 +93,7 @@
                      <th>Price</th>
                      <th>Stock</th>
                      <th>Vendor Code</th>
+                     <th>Modify</th>
                  </tr>
                  <?php
                  // 配列の中身を順番に取り出し、表形式で出力する
@@ -98,7 +104,9 @@
                          <td>{$product['product_name']}</td>
                          <td>{$product['price']}</td>
                          <td>{$product['stock_quantity']}</td>
-                         <td>{$product['vendor_code']}</td>                        
+                         <td>{$product['vendor_code']}</td>
+                         <td><a href='update.php?id={$product['id']}'>
+                         <img src='images/edit.png' alt='modify' class='edit-icon'></a></td>                        
                          </tr>                    
                      ";
                      echo $table_row;

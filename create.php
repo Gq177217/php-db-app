@@ -4,6 +4,31 @@
  $user ='root';
  $password ='root';
 
+ if (isset($_POST['submit'])) {
+    try {
+        $pdo = new PDO($dsn, $user, $password);
+        $sql_insert ='
+        INSERT INTO products (product_code, product_name, price, stock_quantity, vendor_code)
+        VALUES (:product_code, :product_name, :price, :stock_quantity, :vendor_code)
+        ';
+        $stmt_insert = $pdo->prepare($sql_insert);
+
+        $stmt_insert->bindValue(':product_code', $_POST['product_code'], PDO::PARAM_INT);
+        $stmt_insert->bindValue(':product_name', $_POST['product_name'], PDO::PARAM_STR);
+        $stmt_insert->bindValue(':price', $_POST['price'], PDO::PARAM_INT);
+        $stmt_insert->bindValue(':stock_quantity', $_POST['stock_quantity'], PDO::PARAM_INT);
+        $stmt_insert->bindValue(':vendor_code', $_POST['vendor_code'], PDO::PARAM_INT);
+
+        $stmt_insert->execute();
+
+        $count = $stmt_insert->rowCount();
+        $message = "you have registored {$count}item/s!";
+        header("Location: read.php?message={$message}");
+        } catch(PDOException $e) {
+            exit($e->getMessage());
+        }
+        }
+
  try {
     $pdo = new PDO($dsn, $user, $password);
     $sql_select = 'SELECT vendor_code FROM vendors';
@@ -35,7 +60,7 @@
         <article class="registration">
             <h1>Registration</h1>
             <div class="back">
-                <a href="read.php" class="btn">&lt; 戻る</a>
+                <a href="read.php" class="btn">&lt; Back</a>
             </div>
             <form action="create.php" method="post" class="registration-form">
                 <div>
