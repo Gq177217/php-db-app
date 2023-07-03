@@ -94,6 +94,7 @@
                      <th>Stock</th>
                      <th>Vendor Code</th>
                      <th>Modify</th>
+                     <th>Delete</th>
                  </tr>
                  <?php
                  // 配列の中身を順番に取り出し、表形式で出力する
@@ -106,7 +107,9 @@
                          <td>{$product['stock_quantity']}</td>
                          <td>{$product['vendor_code']}</td>
                          <td><a href='update.php?id={$product['id']}'>
-                         <img src='images/edit.png' alt='modify' class='edit-icon'></a></td>                        
+                         <img src='images/edit.png' alt='modify' class='edit-icon'></a></td>
+                         <td> <a href='delete.php?id={$product['id']}'>
+                         <img src='images/delete.png' alt='delete' class='delete-icon'></a></td>                        
                          </tr>                    
                      ";
                      echo $table_row;
