@@ -1,0 +1,15 @@
+{
+    "name": "yasukokawashima/php-db-app",
+    "autoload": {
+        "psr-4": {
+            "Yasukokawashima\\PhpDbApp\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Yasuko kawashima",
+            "email": "yasuko.kawashima@gmail.com"
+        }
+    ],
+    "require": {}
+}
