@@ -1,6 +1,6 @@
 <?php 
 $dsn = 'mysql:dbname=heroku_2338003a1917fd8;host=us-cdbr-east-06.cleardb.net;charset=utf8mb4';
-$user = 'bfd69e2febafbf:83fc82e6';
+$user = 'bfd69e2febafbf';
 $password = '83fc82e6';
 
  // submitパラメータの値が存在するとき（「更新」ボタンを押したとき）の処理
